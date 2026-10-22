@@ -22,4 +22,4 @@ env/
 .pytest_cache/
 .coverage
 htmlcov/
-data/
+

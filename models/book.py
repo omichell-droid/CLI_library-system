@@ -7,7 +7,20 @@ class Book:
         self.author = author
         self.total_copies = total_copies
         # A new book starts with all copies available
-        self.available_copies = total_copies if available_copies is None else available_copies
+        if available_copies is None:
+            available_copies = total_copies
+        self._available_copies = available_copies
+
+    @property
+    def available_copies(self):
+        return self._available_copies
+
+    @available_copies.setter
+    def available_copies(self, value):
+        # Copies can never go below 0 or above the total
+        if value < 0 or value > self.total_copies:
+            raise ValueError("Copies must be between 0 and the total")
+        self._available_copies = value
 
     def is_available(self):
         return self.available_copies > 0

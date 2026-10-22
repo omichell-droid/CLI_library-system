@@ -1,14 +1,22 @@
 class User:
 
     def __init__(self, username, role="patron"):
-        self.username = username
-        self.role = role
+        self._username = username
+        self._role = role
+
+    @property
+    def username(self):
+        return self._username
+
+    @property
+    def role(self):
+        return self._role
 
     def is_admin(self):
-        return self.role == "admin"
+        return self._role == "admin"
 
     def to_dict(self):
-        return {"username": self.username, "role": self.role}
+        return {"username": self._username, "role": self._role}
 
     @classmethod
     def from_dict(cls, data):
@@ -17,7 +25,7 @@ class User:
         return User(data["username"])
 
     def __str__(self):
-        return self.username + " (" + self.role + ")"
+        return self._username + " (" + self._role + ")"
 
 
 class Admin(User):

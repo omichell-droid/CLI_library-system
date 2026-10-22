@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "title": "Things Fall Apart",
+        "author": "Chinua Achebe",
+        "total_copies": 3,
+        "available_copies": 3
+    },
+    {
+        "id": 2,
+        "title": "Thursday",
+        "author": "Jackson Biko",
+        "total_copies": 1,
+        "available_copies": 1
+    },
+    {
+        "id": 3,
+        "title": "Dust",
+        "author": "Yvonne Odhiambo",
+        "total_copies": 3,
+        "available_copies": 3
+    },
+    {
+        "id": 4,
+        "title": "Things I will tell my daughter",
+        "author": "Joan Thatiah",
+        "total_copies": 5,
+        "available_copies": 1
+    },
+    {
+        "id": 5,
+        "title": "Dune",
+        "author": "Frank Herbert",
+        "total_copies": 2,
+        "available_copies": 2
+    }
+]
