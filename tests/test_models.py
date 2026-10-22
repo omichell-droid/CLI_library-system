@@ -28,9 +28,23 @@ def test_book_to_dict_and_back():
     assert copy.available_copies == 1
 
 
+def test_available_copies_cannot_go_below_zero():
+    book = Book(1, "Test", "Me", 2)
+    try:
+        book.available_copies = -1
+        assert False
+    except ValueError:
+        assert True
+
+
 def test_user_and_admin_roles():
     assert User("leslie").is_admin() == False
     assert Admin("librarian").is_admin() == True
+
+
+def test_user_username_is_read_only():
+    user = User("leslie")
+    assert user.username == "leslie"
 
 
 def test_new_transaction_is_borrowed():
@@ -56,15 +70,3 @@ def test_storage_save_and_load():
     assert storage.load("books") == [{"id": 1}]
     os.remove("test_data/books.json")
     os.rmdir("test_data")
-
-
-if __name__ == "__main__":
-    test_new_book_has_all_copies_available()
-    test_book_with_no_copies_is_not_available()
-    test_book_to_dict_and_back()
-    test_user_and_admin_roles()
-    test_new_transaction_is_borrowed()
-    test_mark_returned()
-    test_old_loan_is_overdue()
-    test_storage_save_and_load()
-    print("All tests passed!")

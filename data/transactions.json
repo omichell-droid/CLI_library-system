@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "username": "patron1",
+        "book_id": 1,
+        "borrow_date": "2026-10-22",
+        "due_date": "2026-11-05",
+        "return_date": "2026-10-22",
+        "status": "returned"
+    }
+]
